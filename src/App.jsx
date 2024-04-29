@@ -1,33 +1,50 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import HeaderMain from './page_componetns/Header.jsx'
+import Login from './login/Login.jsx'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Layout from './page_componetns/Layout.jsx';
+import ErrorPage from './blog/ErrorPage.jsx';
+import Post_Detail from './blog/Post_Detail.jsx';
+import Home from './blog/Home.jsx';
+import Register from './login/Registe.jsx';
+import User_Profile from './blog/User_Profile.jsx';
+import Authors from './blog/Authors.jsx';
+import Create_Post from './blog/Create_Post.jsx';
+import EditPosts from './blog/EditPosts.jsx';
+import Delete_post from './blog/Delete_post.jsx';
+import Logout from './login/Logout.jsx';
+
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorPage/>,
+    children: [
+      {index: true,element: <Home />},
+      {path: "posts/:id",element: <Post_Detail />},
+      {path: "register",element: <Register />},
+      {path: "login",element: <Login/>},
+      {path: "profile/:id",element: <User_Profile />},
+      {path: "authors",element: <Authors />},
+      {path: "create",element: <Create_Post/>},
+      {path: "posts/:id/delete",element: <Delete_post/>},
+      {path: "posts/:id/edit",element: <EditPosts />},
+      {path: "logout",element: <Logout />},      
+    ],
+  },
+]);
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <RouterProvider router={router}></RouterProvider>
     </>
   )
 }

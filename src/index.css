@@ -1,4 +1,14 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+
 :root {
+  --color-primary: green;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -15,7 +25,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #242424;
   text-decoration: inherit;
 }
 a:hover {
@@ -23,6 +33,7 @@ a:hover {
 }
 
 body {
+  font-family:'Times New Roman', Times, serif;
   margin: 0;
   display: flex;
   place-items: center;
@@ -65,4 +76,45 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+img{
+  display: block;
+  object-fit: cover;
+  width: 100%;
+
+}
+
+
+nav{
+  width: 100vw;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  background: whitesmoke;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 4px solid var(black);
+  backdrop-filter: blur(20px);
+}
+
+.nav_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+}
+
+.nav_menu{
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav__tog-btn{
+  display: none;
+
 }
