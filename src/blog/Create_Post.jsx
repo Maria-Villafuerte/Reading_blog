@@ -2,7 +2,7 @@ import React from 'react'
 
 const Create_Post = () => {
   return (
-    <div>Create_Post</div>
+    <div className='color'>Create_Post</div>
   )
 }
 
