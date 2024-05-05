@@ -7,3 +7,4 @@ const Post_Detail = () => {
 }
 
 export default Post_Detail
+

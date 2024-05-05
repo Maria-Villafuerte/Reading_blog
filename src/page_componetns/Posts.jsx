@@ -59,7 +59,7 @@ const Posts = () => {
   return (
     <section className="posts">
       {
-        posts.map( ({id,thumbnail,category,title,desc,authorId})=> <Post_Item key={id} thumbnail= {thumbnail} 
+        posts.map( ({id,thumbnail,category,title,desc,authorId})=> <Post_Item key={id} postsID={id} thumbnail= {thumbnail} 
         category={category} title={title} desc= {desc} authorId={authorId}   />)
       }
     </section>

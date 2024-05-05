@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Component, useState } from 'react'
 import HeaderMain from './page_componetns/Header.jsx'
 import Login from './login/Login.jsx'
 import {
@@ -16,6 +16,8 @@ import Create_Post from './blog/Create_Post.jsx';
 import EditPosts from './blog/EditPosts.jsx';
 import Delete_post from './blog/Delete_post.jsx';
 import Logout from './login/Logout.jsx';
+import Try from '../Server/Try.jsx';
+
 
 
 
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
       {path: "register",element: <Register />},
       {path: "login",element: <Login/>},
       {path: "profile/:id",element: <User_Profile />},
-      {path: "authors",element: <Authors />},
+      {path: "authors",element: <Try />},
       {path: "create",element: <Create_Post/>},
       {path: "posts/:id/delete",element: <Delete_post/>},
       {path: "posts/:id/edit",element: <EditPosts />},

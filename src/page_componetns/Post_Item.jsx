@@ -9,7 +9,7 @@ const Post_Item = (postsID,category,title,desc,authorId,thumbnail) => {
         <img src={thumbnail} alt={title} />
       </div>
       <div className="posts_content">
-        <Link>
+        <Link to={'/posts/${postsID'}>
         </Link>
 
       </div>
