@@ -1,44 +1,56 @@
-import { useState, useEffect } from 'react'; // Asegúrate de importar useState y useEffect de React
-import { ref, get } from 'firebase/database'; // Importa las funciones ref y get de Firebase
-import { database } from './firebaseConfig'; // Importa la configuración de tu base de datos Firebase
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { ref, get, remove } from 'firebase/database'; // Importa las funciones necesarias de Firebase
+import { database } from './firebaseConfig';
 
 const Try = () => {
   const [users, setUsers] = useState([]);
-  useEffect(()=>{
+
+  useEffect(() => {
     const usersRef = ref(database, 'posts');
-    get(usersRef).then((snapshot)=>{
-      if(snapshot.exists()){
-        const usersArray = Object.entries(snapshot.val()).map(([id,data])=>({
-          id,
-          ...data,
+    get(usersRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const usersArray = Object.entries(snapshot.val()).map(([id, data]) => ({
+            id,
+            ...data,
+          }));
+          setUsers(usersArray);
+        } else {
+          console.log('No hay datos disponibles');
+        }
+      })
+      .catch((error) => {
+        console.error('Error al cargar los datos de Firebase:', error);
+      });
+  }, []);
 
-        }));
-        setUsers(usersArray);
-      }else{
-        console.log('no data available');
-      }
-    }).catch((error) =>{
-      console.log(error)
-    });
+  const handleDeletePost = (id) => {
+    const postRef = ref(database, `posts/${id}`);
+    remove(postRef)
+      .then(() => {
+        console.log('Post eliminado correctamente');
+        // Actualiza el estado para reflejar la eliminación del post
+        setUsers(users.filter(user => user.id !== id));
+      })
+      .catch((error) => {
+        console.error('Error al eliminar el post:', error);
+      });
+  };
 
-  },[])
   return (
     <>
-    <main>
-      <h1>FIREBASE</h1>
-      <div></div>
-      {users.map((user)=>(
-        <div key={user.id}>
-          <h2>{user.title}</h2>
-          <p>{user.subtitle}</p>
-
-        </div>
-      ))}
-    </main>
-    
+      <main>
+        <h1>FIREBASE</h1>
+        {users.map((user) => (
+          <div key={user.id}>
+            <h2>{user.title}</h2>
+            <p>{user.subtitle}</p>
+            <button onClick={() => handleDeletePost(user.id)}>Eliminar Post</button>
+          </div>
+        ))}
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default Try
+export default Try;
