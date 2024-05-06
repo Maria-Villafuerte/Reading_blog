@@ -1,0 +1,112 @@
+/* blogPostStyles.css */
+
+.blog-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* No se ajusta automáticamente la altura */
+}
+
+.blog-post-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 600px; /* Ajustar el ancho máximo de la tarjeta */
+  width: 400px;
+}
+
+.blog-post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333; /* Color del título más oscuro */
+}
+
+.blog-post-content {
+  font-size: 16px;
+  line-height: 1.6; /* Mayor altura de línea para una mejor legibilidad */
+  margin-bottom: 20px; /* Aumentar el espacio inferior */
+  color: #555555; /* Color de texto más oscuro */
+  text-align: justify; /* Justificar el texto */
+}
+
+.blog-post-thumbnail {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px; /* Aumentar el espacio inferior */
+  border-radius: 10px; /* Bordes más redondeados */
+}
+
+.blog-post-category {
+  background-color: #f2f2f2;
+  color: #333333;
+  padding: 8px 16px; /* Aumentar el espacio de relleno */
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 20px; /* Aumentar el espacio inferior */
+}
+
+.blog-post-delete-button {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px; /* Aumentar el espacio de relleno */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.blog-post-delete-button:hover {
+  background-color: #e74c3c;
+}
+
+.title-container {
+  text-align: center; /* Centra el contenido horizontalmente */
+  margin-bottom: 30px; /* Espacio inferior para separarlo del contenido */
+  padding-top: 12vh;
+}
+
+.main-title {
+  font-size: 36px; /* Tamaño grande de fuente */
+  font-weight: bold; /* Texto en negrita */
+  color: #ff6347; /* Color naranja */
+  text-transform: uppercase; /* Convertir el texto a mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  border-bottom: 2px solid #ff6347; /* Línea inferior naranja */
+  padding-bottom: 10px; /* Espacio inferior para la línea */
+}
+
+
+.ad-container {
+  position: fixed;
+  padding-top: 25vh;
+
+  width: 20vh; /* Ancho deseado de los contenedores de anuncios */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que estén en la parte superior */
+}
+
+.ad {
+  background-color: #f2f2f2; /* Color de fondo del anuncio */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  /* Estilos adicionales según tus preferencias */
+}
+
+.ad.left {
+  left: 0; 
+  /* Posición a la izquierda de la página */
+}
+
+.ad.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0; /* Posición a la derecha de la página */
+}

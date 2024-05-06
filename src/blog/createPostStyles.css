@@ -1,0 +1,46 @@
+/* createPostStyles.css */
+
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20vh;
+  width: 100%;
+
+}
+
+.create-post-form {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px; /* Ajusta el ancho del formulario según sea necesario */
+}
+
+.create-post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.create-post-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-post-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-post-button:hover {
+  background-color: #0056b3;
+}

@@ -1,6 +1,6 @@
+import './loginStyles.css';
 import React, { useState } from "react";
 import md5 from "md5";
-import './main.css';
 
 const Login = ({ setLogIn, setRegister }) => {
   const [username, setUsername] = useState("");
@@ -39,39 +39,31 @@ const Login = ({ setLogIn, setRegister }) => {
     }
   };
 
-  
-
   return (
-    <div className="app_container">
-      <div className="name">
-        <h1 className="h1_login">El Fogón Dorado</h1>
-        <h2 className="h2_login">'Cualquiera puede cocinar'</h2>
-      </div>
-      <div className="register-container">
-        <span className="title">Ingresar</span>
-        <span className="sub_titulo"></span>
-        <form onSubmit={handleSubmit}>
+    <div className="login-container"> {/* Agregamos la clase login-container */}
+      <span className="title">Ingresar</span>
+      <span className="sub_titulo"></span>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="login"
+          type="text"
+          placeholder="ID"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <div className="second">
           <input
             className="login"
-            type="text"
-            placeholder="ID"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <div className="second">
-            <input
-              className="login"
-              type="password"
-              placeholder="Contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit">Acceder</button>
-        </form>
-        {errorMessage && <p>{errorMessage}</p>}
-        <p onClick={() => setRegister(true)}>Todavía no tienes cuenta? Registrar</p>
-      </div>
+        </div>
+        <button type="submit">Acceder</button>
+      </form>
+      {errorMessage && <p>{errorMessage}</p>}
+      <p onClick={() => setRegister(true)}>Todavía no tienes cuenta? Registrar</p>
     </div>
   );
 };

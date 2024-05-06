@@ -1,0 +1,55 @@
+/* headerMainStyles.css */
+
+
+.header-main-container {
+  background-color: #2b627d;
+  color: #fff;
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+}
+
+/* Estilos para el logo del encabezado */
+.header-main-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+/* Estilos para el área del usuario del encabezado */
+.header-main-user {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-right: 70px;
+  background-color: #546E7A;
+  height: 40px;
+  width: 120px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilos para el menú de navegación */
+.nav_menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para los elementos de la lista del menú de navegación */
+.nav_menu li {
+  margin-right: 20px;
+}
+
+/* Estilos para el último elemento de la lista del menú de navegación */
+.nav_menu li:last-child {
+  margin-right: 0;
+}

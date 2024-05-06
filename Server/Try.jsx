@@ -44,7 +44,9 @@ const Try = () => {
         {users.map((user) => (
           <div key={user.id}>
             <h2>{user.title}</h2>
-            <p>{user.subtitle}</p>
+            <p>{user.desc}</p>
+            <p>{user.thumbnail}</p>
+            <p>{user.category}</p>
             <button onClick={() => handleDeletePost(user.id)}>Eliminar Post</button>
           </div>
         ))}

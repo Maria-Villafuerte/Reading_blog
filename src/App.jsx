@@ -1,6 +1,7 @@
-import { Component, useState } from 'react'
-import HeaderMain from './page_componetns/Header.jsx'
-import Login from './login/Login.jsx'
+import './App.css';
+import { Component } from 'react';
+import HeaderMain from './page_componetns/Header.jsx';
+import Login from './login/Login.jsx';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -18,10 +19,6 @@ import Delete_post from './blog/Delete_post.jsx';
 import Logout from './login/Logout.jsx';
 import Try from '../Server/Try.jsx';
 
-
-
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +30,7 @@ const router = createBrowserRouter([
       {path: "register",element: <Register />},
       {path: "login",element: <Login/>},
       {path: "profile/:id",element: <User_Profile />},
-      {path: "authors",element: <Try />},
+      {path: "authors",element: <Authors />},
       {path: "create",element: <Create_Post/>},
       {path: "posts/:id/delete",element: <Delete_post/>},
       {path: "posts/:id/edit",element: <EditPosts />},
@@ -42,13 +39,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-
 function App() {
   return (
     <>
-    <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
