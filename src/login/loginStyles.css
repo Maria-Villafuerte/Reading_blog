@@ -1,14 +1,19 @@
 /* loginStyles.css */
 
+.ww{
+  width: 100%;
+  height: 5vh;
+  background-color: #f2f2f2;
+}
 .login-container {
   display: flex;
   flex-direction: column;
   background-color: #546E7A;
-  padding: 15rem;
+  /* padding-top: 1rem; */
   height: auto;
   text-align: center;
-  width: 177vh;
-  height: 100vh;
+  width: 100%;
+  height: 77vh;
   align-items: center;
   justify-content: center;
 }
@@ -80,8 +85,9 @@
 .login-container p {
   margin-top: 0.5rem;
   font-size: 1rem;
-  color: #408eb0;
+  color: #0a1c24;
   background-color: #546E7A;
+  /* padding-bottom: 20vh; */
 }
 
 .login-container .login {
