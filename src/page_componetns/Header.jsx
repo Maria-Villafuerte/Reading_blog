@@ -15,7 +15,7 @@ function HeaderMain({ id }) {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/create">Create</Link></li>
           <li><Link to="/authors">Authors</Link></li>
-          <li><Link to="/logout">Logout</Link></li>
+          <li><Link to="/login">Login</Link></li>
         </ul>
         <button className="nav__tog-btn">
           <AiOutlineClose />
