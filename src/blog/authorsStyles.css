@@ -1,23 +1,33 @@
 /* authorsStyles.css */
 
+.rr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .author-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  width: 400px;
+  text-align: center;
 }
 
 .author-name {
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: #333333; /* Color del título más oscuro */
 }
 
-.author-info {
-  color: #666;
-}
 
-.author-info p {
-  margin-bottom: 4px;
+.author-descip{
+  margin-top: 10px;
+  color: #333333; /* Color del título más oscuro */
+  text-align: justify;
+
 }

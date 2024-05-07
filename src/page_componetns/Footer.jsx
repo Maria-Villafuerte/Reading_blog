@@ -6,7 +6,7 @@ const Footer = () => {
       <ul className="footer_category">
         <p>Thanks for coming!</p>
         <li><Link to="authors">More about me</Link></li>
-        <p>gmail:</p>
+        <p>gmail: vil22129@uvg.edu.gt</p>
       </ul>
      </footer>
   );

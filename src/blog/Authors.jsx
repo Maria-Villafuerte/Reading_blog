@@ -12,14 +12,17 @@ const Authors = () => {
   }
 
   return (
-    <div>
-      <h1>Usuarios Registrados:</h1>
+    <div className='rr'>
+    <h1>Usuario</h1>
       {users.map((user, index) => (
         <div key={index} className="author-card">
           <p className="author-name">Nombre: {user.name}</p>
-          {/* Agrega más información aquí si lo deseas */}
-        </div>
+          </div>
       ))}
+      <div className='author-card'>
+          <p>Estudiante de computación</p>
+          <p className="author-descip">Soy un estudiante universitario apasionado por la tecnología y el desarrollo web. En este chat decidí hacer un blog para mis lecturas y los reviews que más me gustaron</p>
+      </div>
     </div>
   );
 };

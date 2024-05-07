@@ -21,7 +21,7 @@ const Home = () => {
       <main>
         <div className='mm'>
           <div className="title-container">
-            <h1 className="main-title">FIREBASE</h1>
+            <h1 className="main-title">Welcome to my reading blog</h1>
           </div>
           <Suspense fallback={<Loading />}>
             {loading ? <Loading /> : (
