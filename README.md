@@ -1,4 +1,4 @@
-# Reaging blog
+# Reading blog
 This is a blog for my assignment of the class 'Sistemas y tecnología web'. Here, I will show the getting started with my code and the parts of the rubric I can show to make my grading easier.
 
 # Get Started
