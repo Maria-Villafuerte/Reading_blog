@@ -42,11 +42,12 @@ const Home = () => {
 
   return (
     <>
-      <main>
-        {/* Contenedor del anuncio 1 */}
+      <main >
+        <div className='mm'>
+        {/* Contenedor del anuncio 1
         <div className="ad-container left">
           <div className="ad">Anuncio 1</div>
-        </div>
+        </div> */}
 
         <div className="title-container">
           <h1 className="main-title">FIREBASE</h1>
@@ -65,11 +66,11 @@ const Home = () => {
             <p className="blog-post-content">{user.desc}</p>
             <p className="blog-post-thumbnail">{user.thumbnail}</p>
             <p className="blog-post-category">{user.category}</p>
-            <button className="blog-post-delete-button" onClick={() => handleDeletePost(user.id)}>Eliminar Post</button>
           </div>
           </div>
           </div>
         ))}
+        </div>
       </main>
     </>
   );

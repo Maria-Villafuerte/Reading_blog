@@ -1,14 +1,19 @@
 /* registerStyles.css */
 
+.qq{
+  width: 100%;
+  height: 12vh;
+  background-color: #f2f2f2;
+}
 .register-container {
   display: flex;
   flex-direction: column;
   background-color: #546E7A;
-  padding: 15rem;
+  /* padding-top: 1rem; */
   height: auto;
   text-align: center;
-  width: 177vh;
-  height: 100vh;
+  width: 100%;
+  height: 77vh;
   align-items: center;
   justify-content: center;
 }

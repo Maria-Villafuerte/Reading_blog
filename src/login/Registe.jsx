@@ -1,13 +1,12 @@
 import './registerStyles.css';
 import React, { useState } from "react";
 import md5 from "md5";
+import { Link } from 'react-router-dom';
 
-const Register = ({ setLogIn, setRegister }) => {
+const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
-    type: "",
-    password: "",
-    area: ""
+    password: ""
   });
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -19,85 +18,45 @@ const Register = ({ setLogIn, setRegister }) => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, type, password, area } = formData;
+    const { name, password } = formData;
 
     try {
       // Encriptar la contraseña usando MD5
       const encryptedPassword = md5(password);
 
-      // Hacer la solicitud al backend para registrar al usuario
-      const response = await fetch('http://127.0.0.1:3002/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name,
-          trabajo: type, // Assuming 'type' corresponds to 'trabajo' in backend
-          password: encryptedPassword,
-          area
-        })
-      });
+      // Guardar el usuario en localStorage
+      localStorage.setItem('userData', JSON.stringify({
+        name,
+        password: encryptedPassword
+      }));
 
-      const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem('id', username);
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 2000);
-
-        // Limpiar el formulario después de registrar al usuario
-        setFormData({
-          name: "",
-          type: "",
-          password: "",
-          area: ""
-        });
-
-        setLogIn(true);
-      } else {
-        setErrorMessage(data.error || "Error al registrar usuario.");
-      }
-    } catch (error) {
-      console.error('Error al registrar usuario:', error);
-      setErrorMessage("¡Registro exitoso!");
+      // Limpiar el formulario después de registrar al usuario
       setFormData({
         name: "",
-        type: "",
-        password: "",
-        area: ""
+        password: ""
       });
+
+      setSuccessMessage("¡Registro exitoso!");
+      console.log(name)
+      console.log(password)
+    } catch (error) {
+      console.error('Error al registrar usuario:', error);
+      setErrorMessage("Error al registrar usuario.");
     }
   };
 
   return (
     <>
-      <div className="register-container"> {/* Añadimos la clase register-container */}
+      <div className="register-container">
         <span className="title">Registrar</span>
-        <span className="sub_titulo"></span>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Nombre"
             name="name"
             value={formData.name}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Tipo Usuario"
-            name="type"
-            value={formData.type}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Área"
-            name="area"
-            value={formData.area}
             onChange={handleChange}
           />
           <input
@@ -111,7 +70,7 @@ const Register = ({ setLogIn, setRegister }) => {
         </form>
         {successMessage && <p>{successMessage}</p>}
         {errorMessage && <p>{errorMessage}</p>}
-        <p onClick={() => setRegister(false)}>¿Ya tienes cuenta? Ingresar</p>
+        <p><Link to="/login">¿Todavía no tienes cuenta? Inicia sesión</Link></p>
       </div>
     </>
   );
