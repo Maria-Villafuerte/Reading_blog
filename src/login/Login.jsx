@@ -1,39 +1,46 @@
 import './loginStyles.css';
-import React, { useState } from "react";
+import React from "react";
 import md5 from "md5";
 import { Link, useNavigate } from 'react-router-dom';
+import useForm from './useForm'; // Importa el hook useForm
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // Define los valores iniciales del formulario
+  const initialValues = {
+    username: "",
+    password: ""
+  };
 
+  // Define la función de envío del formulario
+  const handleSubmit = async (values) => {
     try {
       // Obtener datos del localStorage
       const userData = localStorage.getItem('userData');
       if (!userData) {
-        setErrorMessage("No hay usuarios registrados.");
-        return;
+        throw new Error("No hay usuarios registrados.");
       }
       const { name, password: storedPassword } = JSON.parse(userData);
 
-      if (name === username && md5(password) === storedPassword) {
+      if (name === values.username && md5(values.password) === storedPassword) {
         console.log("Inicio de sesión exitoso!");
-        localStorage.setItem('id', username);
-        navigate('/delete');
+        localStorage.setItem('id', values.username);
+        navigate('/admin');
       } else {
-        setErrorMessage("Nombre de usuario o contraseña incorrectos.");
+        throw new Error("Nombre de usuario o contraseña incorrectos.");
       }
     } catch (error) {
-      console.error('Error al iniciar sesión:', error);
-      setErrorMessage("Error al iniciar sesión.");
+      console.error('Error al iniciar sesión:', error.message);
+      setErrorMessage(error.message);
     }
   };
 
+  // Usa el hook useForm para manejar el formulario
+  const { values, handleChange, handleSubmit: handleFormSubmit, errorMessage } = useForm(
+    initialValues,
+    handleSubmit
+  );
 
   return (
     <div>
@@ -41,21 +48,23 @@ const Login = () => {
       <div className="login-container">
         <span className="title">Ingresar</span>
         <span className="sub_titulo"></span>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleFormSubmit}>
           <input
             className="login"
             type="text"
             placeholder="Nombre"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            name="username"
+            value={values.username}
+            onChange={handleChange}
           />
           <div className="second">
             <input
               className="login"
               type="password"
               placeholder="Contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={values.password}
+              onChange={handleChange}
             />
           </div>
           <button type="submit">Acceder</button>
