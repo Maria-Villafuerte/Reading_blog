@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import './headerMainStyles.css';
 
-function HeaderMain({ id }) {
+function HeaderMain() {
   return (
     <nav>
       <div className="header-main-container">

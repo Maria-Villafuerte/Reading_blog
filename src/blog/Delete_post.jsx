@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 import { ref, get, remove } from 'firebase/database'; // Importa las funciones necesarias de Firebase
 import { database } from '../../Server/firebaseConfig';
@@ -56,18 +55,19 @@ const Delete_post = () =>  {
         </div> */}
 
         {users.map((user) => (
-          <div className="blog-post-container">
-          <div className="blog-post-card">
-          <div className="blog-post" key={user.id}>
-            <h2 className="blog-post-title">{user.title}</h2>
-            <p className="blog-post-content">{user.desc}</p>
-            <p className="blog-post-thumbnail">{user.thumbnail}</p>
-            <p className="blog-post-category">{user.category}</p>
-            <button className="blog-post-delete-button" onClick={() => handleDeletePost(user.id)}>Eliminar Post</button>
-          </div>
-          </div>
+          <div className="blog-post-container" key={user.id}>
+            <div className="blog-post-card">
+              <div className="blog-post">
+                <h2 className="blog-post-title">{user.title}</h2>
+                <p className="blog-post-content">{user.desc}</p>
+                <p className="blog-post-thumbnail">{user.thumbnail}</p>
+                <p className="blog-post-category">{user.category}</p>
+                <button className="blog-post-delete-button" onClick={() => handleDeletePost(user.id)}>Eliminar Post</button>
+              </div>
+            </div>
           </div>
         ))}
+
         </div>
       </main>
     </>

@@ -1,5 +1,5 @@
 import './registerStyles.css';
-import React, { useState } from "react";
+import { useState } from "react";
 import md5 from "md5";
 import { Link } from 'react-router-dom';
 

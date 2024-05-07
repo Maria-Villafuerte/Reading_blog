@@ -1,6 +1,4 @@
 import './App.css';
-import { Component } from 'react';
-import HeaderMain from './page_componetns/Header.jsx';
 import Login from './login/Login.jsx';
 import {
   createBrowserRouter,
@@ -17,7 +15,6 @@ import Create_Post from './blog/Create_Post.jsx';
 import EditPosts from './blog/EditPosts.jsx';
 import Delete_post from './blog/Delete_post.jsx';
 import Logout from './login/Logout.jsx';
-import Try from '../Server/Try.jsx';
 
 const router = createBrowserRouter([
   {

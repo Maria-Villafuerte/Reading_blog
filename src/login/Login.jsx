@@ -1,5 +1,4 @@
 import './loginStyles.css';
-import React from "react";
 import md5 from "md5";
 import { Link, useNavigate } from 'react-router-dom';
 import useForm from './useForm'; // Importa el hook useForm
@@ -32,7 +31,6 @@ const Login = () => {
       }
     } catch (error) {
       console.error('Error al iniciar sesión:', error.message);
-      setErrorMessage(error.message);
     }
   };
 

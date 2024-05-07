@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ref, push, set } from 'firebase/database';
 import { database } from '../../Server/firebaseConfig';
 import './createPostStyles.css'; // Importa los estilos CSS
