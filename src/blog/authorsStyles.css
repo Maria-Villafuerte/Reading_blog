@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 25vh;
+  padding-bottom: 6.8vh;
 }
 
 .author-card {
