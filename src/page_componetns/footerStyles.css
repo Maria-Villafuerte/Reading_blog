@@ -1,0 +1,29 @@
+/* footerStyles.css */
+
+.footer {
+  background-color: #37474F;
+  color: #fff;
+  padding: 20px;
+  height: 18vh;
+  margin: 0;
+}
+
+.footer_category {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_category li {
+  margin-bottom: 10px;
+}
+
+.footer_category a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer_category a:hover {
+  text-decoration: underline;
+}
+

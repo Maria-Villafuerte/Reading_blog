@@ -2,21 +2,18 @@ import React from 'react';
 import HeaderMain from './Header.jsx';
 import Footer from './Footer';
 import { Outlet } from "react-router-dom";
-import './layoutStyles.css'; // Importa los estilos CSS
+import './footerStyles.css'; // Importa los estilos CSS
+
 
 const Layout = () => {
   return (
-    <div className="layout-container">
-      <div className="header">
-        <HeaderMain />
+    <>
+      <HeaderMain />
+      <Outlet />
+      <div className='ee'>
+      <Footer />
       </div>
-      <div className="main-content">
-        <Outlet />
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
+    </>
   );
 }
 
