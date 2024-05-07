@@ -10,7 +10,6 @@ function HeaderMain() {
           {/* <img src={} alt=''></img> */}
         </Link>
         <ul className="nav_menu">
-          <li><Link to="/profile">Pato Cuak</Link></li>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/create">Create</Link></li>
           <li><Link to="/authors">Authors</Link></li>

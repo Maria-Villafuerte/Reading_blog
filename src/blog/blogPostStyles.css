@@ -120,3 +120,16 @@
   align-items: center;
   right: 0; /* Posición a la derecha de la página */
 }
+
+.gif-container {
+  width: 100px; /* Ancho deseado de la imagen GIF */
+  height: auto; /* Altura automática para mantener la proporción */
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.gif-image {
+  max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+  max-height: 100%; /* Ajusta el tamaño máximo de la imagen */
+}
