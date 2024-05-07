@@ -6,7 +6,6 @@ import './blogPostStyles.css'; // Importa los estilos CSS
 
 const Delete_post = () =>  {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     const usersRef = ref(database, 'posts');
     get(usersRef)
